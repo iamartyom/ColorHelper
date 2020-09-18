@@ -1,4 +1,6 @@
 ﻿using System;
+using ColorHelper.Color;
+using ColorHelper.Converter;
 
 namespace ColorHelper.ConsoleDemo
 {
@@ -6,7 +8,8 @@ namespace ColorHelper.ConsoleDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            HEX hex = ColorConverter.RgbToHex(new RGB(100, 100, 100));
+            Console.WriteLine(hex);
         }
     }
 }
