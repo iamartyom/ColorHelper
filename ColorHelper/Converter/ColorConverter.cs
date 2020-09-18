@@ -1,6 +1,12 @@
-﻿namespace ColorHelper.Converter
+﻿using ColorHelper.Color;
+
+namespace ColorHelper.Converter
 {
-    public class ColorConverter
+    public static class ColorConverter
     {
+        public static HEX RgbToHex(RGB rgb)
+        {
+            return new HEX($"{rgb.R:X2}{rgb.G:X2}{rgb.B:X2}");
+        }
     }
 }

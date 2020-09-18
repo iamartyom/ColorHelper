@@ -2,9 +2,9 @@
 {
     public class RGB
     {
-        private byte R { get; set; }
-        private byte G { get; set; }
-        private byte B { get; set; }
+        public byte R { get; set; }
+        public byte G { get; set; }
+        public byte B { get; set; }
 
         public RGB(byte r, byte g, byte b)
         {
