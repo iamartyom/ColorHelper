@@ -10,6 +10,9 @@ namespace ColorHelper.ConsoleDemo
         {
             HEX hex = ColorConverter.RgbToHex(new RGB(100, 100, 100));
             Console.WriteLine(hex);
+
+            RGB rgb = ColorConverter.HexToRgb(new HEX("FFFF90"));
+            Console.WriteLine(rgb);
         }
     }
 }
