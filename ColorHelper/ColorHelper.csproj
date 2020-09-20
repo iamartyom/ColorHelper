@@ -6,7 +6,7 @@
     <RepositoryUrl>https://github.com/iamartyom/ColorHelper</RepositoryUrl>
     <PackageProjectUrl>https://github.com/iamartyom/ColorHelper</PackageProjectUrl>
     <PackageTags>Color, Converter, RGB, HEX, CMYK</PackageTags>
-    <PackageReleaseNotes>Support color types:
+    <PackageReleaseNotes>Supported color types:
 - RGB
 - HEX
 - CMYK
