@@ -14,5 +14,10 @@
             this.Y = y;
             this.K = k;
         }
+
+        public override string ToString()
+        {
+            return $"{this.C}% {this.M}% {this.Y}% {this.K}%";
+        }
     }
 }
