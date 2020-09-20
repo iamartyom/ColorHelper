@@ -12,5 +12,10 @@
             this.G = g;
             this.B = b;
         }
+
+        public override string ToString()
+        {
+            return $"rgb({this.R}, {this.G}, {this.B})";
+        }
     }
 }
