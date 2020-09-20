@@ -19,6 +19,7 @@ Supported methods:
 - CmykToRgb
 - CmykToHex</PackageReleaseNotes>
     <Description>Useful methods for work with colors</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
