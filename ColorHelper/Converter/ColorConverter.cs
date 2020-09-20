@@ -6,6 +6,11 @@ namespace ColorHelper
 {
     public static class ColorConverter
     {
+        public static HEX RgbToHex(RGB rgb)
+        {
+            return new HEX($"{rgb.R:X2}{rgb.G:X2}{rgb.B:X2}");
+        }
+
         public static CMYK RgbToCmyk(RGB rgb)
         {
             double r, g, b, c, m, y, k;
@@ -25,19 +30,6 @@ namespace ColorHelper
                 (byte)Math.Round(k * 100));
         }
 
-        public static RGB CmykToRgb(CMYK cmyk)
-        {
-            return new RGB(
-                (byte)Math.Round(255 * (1 - cmyk.C * 0.01) * (1 - cmyk.K * 0.01)),
-                (byte)Math.Round(255 * (1 - cmyk.M * 0.01) * (1 - cmyk.K * 0.01)),
-                (byte)Math.Round(255 * (1 - cmyk.Y * 0.01) * (1 - cmyk.K * 0.01)));
-        }
-
-        public static HEX RgbToHex(RGB rgb)
-        {
-            return new HEX($"{rgb.R:X2}{rgb.G:X2}{rgb.B:X2}");
-        }
-
         public static RGB HexToRgb(HEX hex)
         {
             int value = Convert.ToInt32(hex.Value, 16);
@@ -50,6 +42,14 @@ namespace ColorHelper
         public static CMYK HexToCmyk(HEX hex)
         {
             return RgbToCmyk(HexToRgb(hex));
+        }
+
+        public static RGB CmykToRgb(CMYK cmyk)
+        {
+            return new RGB(
+                (byte)Math.Round(255 * (1 - cmyk.C * 0.01) * (1 - cmyk.K * 0.01)),
+                (byte)Math.Round(255 * (1 - cmyk.M * 0.01) * (1 - cmyk.K * 0.01)),
+                (byte)Math.Round(255 * (1 - cmyk.Y * 0.01) * (1 - cmyk.K * 0.01)));
         }
 
         public static HEX CmykToHex(CMYK cmyk)
