@@ -13,6 +13,17 @@
             this.B = b;
         }
 
+        public override bool Equals(object obj)
+        {
+            var result = (RGB) obj;
+
+            return (
+                    result != null &&
+                    this.R == result.R &&
+                    this.G == result.G &&
+                    this.B == result.B);
+        }
+
         public override string ToString()
         {
             return $"rgb({this.R}, {this.G}, {this.B})";
