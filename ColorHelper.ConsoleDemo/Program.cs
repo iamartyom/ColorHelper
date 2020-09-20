@@ -8,13 +8,18 @@ namespace ColorHelper.ConsoleDemo
     {
         static void Main(string[] args)
         {
+            RGB rgb;
+
             CMYK cmyk = ColorConverter.RgbToCmyk(new RGB(100, 200, 60));
             Console.WriteLine(cmyk);
+
+            rgb = ColorConverter.CmykToRgb(new CMYK(88, 88, 0, 35));
+            Console.WriteLine(rgb);
 
             HEX hex = ColorConverter.RgbToHex(new RGB(100, 100, 100));
             Console.WriteLine(hex);
 
-            RGB rgb = ColorConverter.HexToRgb(new HEX("FFFF90"));
+            rgb = ColorConverter.HexToRgb(new HEX("FFFF90"));
             Console.WriteLine(rgb);
         }
     }
