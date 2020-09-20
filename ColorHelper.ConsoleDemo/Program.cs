@@ -9,8 +9,9 @@ namespace ColorHelper.ConsoleDemo
         static void Main(string[] args)
         {
             RGB rgb;
+            CMYK cmyk;
 
-            CMYK cmyk = ColorConverter.RgbToCmyk(new RGB(100, 200, 60));
+            cmyk = ColorConverter.RgbToCmyk(new RGB(100, 200, 60));
             Console.WriteLine(cmyk);
 
             rgb = ColorConverter.CmykToRgb(new CMYK(88, 88, 0, 35));
@@ -21,6 +22,9 @@ namespace ColorHelper.ConsoleDemo
 
             rgb = ColorConverter.HexToRgb(new HEX("FFFF90"));
             Console.WriteLine(rgb);
+
+            cmyk = ColorConverter.HexToCmyk(new HEX("00FF00"));
+            Console.WriteLine(cmyk);
         }
     }
 }
