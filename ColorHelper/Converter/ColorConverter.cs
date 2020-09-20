@@ -47,5 +47,10 @@ namespace ColorHelper.Converter
                 (byte)((value >> 8) & 255),
                 (byte)(value & 255));
         }
+
+        public static CMYK HexToCmyk(HEX hex)
+        {
+            return RgbToCmyk(HexToRgb(hex));
+        }
     }
 }
