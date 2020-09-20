@@ -10,8 +10,8 @@ namespace ColorHelper.ConsoleDemo
             HEX hex;
             CMYK cmyk;
 
-            cmyk = ColorConverter.RgbToCmyk(new RGB(100, 200, 60));
-            Console.WriteLine(cmyk);
+            rgb = ColorConverter.HexToRgb(new HEX("FFFF90"));
+            Console.WriteLine(rgb);
 
             rgb = ColorConverter.CmykToRgb(new CMYK(88, 88, 0, 35));
             Console.WriteLine(rgb);
@@ -19,14 +19,14 @@ namespace ColorHelper.ConsoleDemo
             hex = ColorConverter.RgbToHex(new RGB(100, 100, 100));
             Console.WriteLine(hex);
 
-            rgb = ColorConverter.HexToRgb(new HEX("FFFF90"));
-            Console.WriteLine(rgb);
+            hex = ColorConverter.CmykToHex(new CMYK(100, 50, 0, 38));
+            Console.WriteLine(hex);
+
+            cmyk = ColorConverter.RgbToCmyk(new RGB(100, 200, 60));
+            Console.WriteLine(cmyk);
 
             cmyk = ColorConverter.HexToCmyk(new HEX("00FF00"));
             Console.WriteLine(cmyk);
-
-            hex = ColorConverter.CmykToHex(new CMYK(100, 50, 0, 38));
-            Console.WriteLine(hex);
         }
     }
 }
