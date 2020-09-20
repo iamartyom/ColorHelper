@@ -1,10 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using ColorHelper.Color;
 
 namespace ColorHelper.Converter
 {
     public static class ColorConverter
     {
+        public static CMYK RgbToCmyk(RGB rgb)
+        {
+            double r, g, b, c, m, y, k;
+
+            r = rgb.R;
+            g = rgb.G;
+            b = rgb.B;
+
+            k = 1 - new List<double>() { (r / 255), (g / 255), (b / 255) }.Max();
+            c = (1 - (r / 255) - k) / (1 - k);
+            m = (1 - (g / 255) - k) / (1 - k);
+            y = (1 - (b / 255) - k) / (1 - k);
+
+            return new CMYK((byte)Math.Round(c * 100),
+                (byte)Math.Round(m * 100),
+                (byte)Math.Round(y * 100),
+                (byte)Math.Round(k * 100));
+        }
+
         public static HEX RgbToHex(RGB rgb)
         {
             return new HEX($"{rgb.R:X2}{rgb.G:X2}{rgb.B:X2}");

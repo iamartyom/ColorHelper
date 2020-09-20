@@ -2,10 +2,10 @@
 {
     public class CMYK
     {
-        private byte C { get; set; }
-        private byte M { get; set; }
-        private byte Y { get; set; }
-        private byte K { get; set; }
+        public byte C { get; set; }
+        public byte M { get; set; }
+        public byte Y { get; set; }
+        public byte K { get; set; }
 
         public CMYK(byte c, byte m, byte y, byte k)
         {
