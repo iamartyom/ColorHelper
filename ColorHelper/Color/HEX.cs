@@ -8,5 +8,10 @@
         {
             this.Value = value;
         }
+
+        public override string ToString()
+        {
+            return $"{this.Value}";
+        }
     }
 }
