@@ -52,5 +52,10 @@ namespace ColorHelper.Converter
         {
             return RgbToCmyk(HexToRgb(hex));
         }
+
+        public static HEX CmykToHex(CMYK cmyk)
+        {
+            return RgbToHex(CmykToRgb(cmyk));
+        }
     }
 }
