@@ -1,4 +1,4 @@
-﻿namespace ColorHelper.Color
+﻿namespace ColorHelper
 {
     public class CMYK
     {

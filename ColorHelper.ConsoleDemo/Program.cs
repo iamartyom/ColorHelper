@@ -1,6 +1,4 @@
 ﻿using System;
-using ColorHelper.Color;
-using ColorHelper.Converter;
 
 namespace ColorHelper.ConsoleDemo
 {
