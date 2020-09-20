@@ -26,6 +26,14 @@ namespace ColorHelper.Converter
                 (byte)Math.Round(k * 100));
         }
 
+        public static RGB CmykToRgb(CMYK cmyk)
+        {
+            return new RGB(
+                (byte)Math.Round(255 * (1 - cmyk.C * 0.01) * (1 - cmyk.K * 0.01)),
+                (byte)Math.Round(255 * (1 - cmyk.M * 0.01) * (1 - cmyk.K * 0.01)),
+                (byte)Math.Round(255 * (1 - cmyk.Y * 0.01) * (1 - cmyk.K * 0.01)));
+        }
+
         public static HEX RgbToHex(RGB rgb)
         {
             return new HEX($"{rgb.R:X2}{rgb.G:X2}{rgb.B:X2}");
