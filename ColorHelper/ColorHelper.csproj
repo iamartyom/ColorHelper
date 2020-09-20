@@ -20,6 +20,7 @@ Supported methods:
 - CmykToHex</PackageReleaseNotes>
     <Description>Useful methods for work with colors</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
