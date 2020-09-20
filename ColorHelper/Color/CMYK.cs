@@ -15,6 +15,18 @@
             this.K = k;
         }
 
+        public override bool Equals(object obj)
+        {
+            var result = (CMYK)obj;
+
+            return (
+                result != null &&
+                this.C == result.C &&
+                this.M == result.M &&
+                this.Y == result.Y &&
+                this.K == result.K);
+        }
+
         public override string ToString()
         {
             return $"{this.C}% {this.M}% {this.Y}% {this.K}%";
