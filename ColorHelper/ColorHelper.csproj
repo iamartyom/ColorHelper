@@ -6,21 +6,11 @@
     <RepositoryUrl>https://github.com/iamartyom/ColorHelper</RepositoryUrl>
     <PackageProjectUrl>https://github.com/iamartyom/ColorHelper</PackageProjectUrl>
     <PackageTags>Color, Converter, RGB, HEX, CMYK</PackageTags>
-    <PackageReleaseNotes>Supported color types:
-- RGB
-- HEX
-- CMYK
-
-Supported methods:
-- RgbToHex
-- RgbToCmyk
-- HexToRgb
-- HexToCmyk
-- CmykToRgb
-- CmykToHex</PackageReleaseNotes>
+    <PackageReleaseNotes>Added ColorComparer class</PackageReleaseNotes>
     <Description>Useful methods for work with colors</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>
