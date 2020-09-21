@@ -6,11 +6,31 @@
     <RepositoryUrl>https://github.com/iamartyom/ColorHelper</RepositoryUrl>
     <PackageProjectUrl>https://github.com/iamartyom/ColorHelper</PackageProjectUrl>
     <PackageTags>Color, Converter, RGB, HEX, CMYK</PackageTags>
-    <PackageReleaseNotes>Added ColorComparer class</PackageReleaseNotes>
-    <Description>Useful methods for work with colors</Description>
+    <PackageReleaseNotes>Added ColorGenerator class which contains logic for simple get random colors</PackageReleaseNotes>
+    <Description>This library contains several useful classes:
+
+- ColorConverter
+
+RgbToHex
+RgbToCmyk
+HexToRgb
+HexToCmyk
+CmykToRgb
+CmykToHex
+
+- ColorComparer
+
+- ColorGenerator
+
+GetRandomColor
+GetLightRandomColor
+GetDarkRandomColor
+GetRedRandomColor
+GetGreenRandomColor
+GetBlueRandomColor</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
 </Project>
