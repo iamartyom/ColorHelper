@@ -1,6 +1,6 @@
 ﻿namespace ColorHelper
 {
-    public class RGB
+    public class RGB : IColor
     {
         public byte R { get; set; }
         public byte G { get; set; }

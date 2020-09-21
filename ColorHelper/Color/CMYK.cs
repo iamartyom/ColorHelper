@@ -1,6 +1,6 @@
 ﻿namespace ColorHelper
 {
-    public class CMYK
+    public class CMYK : IColor
     {
         public byte C { get; set; }
         public byte M { get; set; }

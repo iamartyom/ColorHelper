@@ -1,6 +1,6 @@
 ﻿namespace ColorHelper
 {
-    public class HEX
+    public class HEX : IColor
     {
         private string _value;
 
