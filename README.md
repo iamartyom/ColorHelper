@@ -38,3 +38,10 @@ Convert Cmyk to Hex:
 ```
 HEX hex = ColorConverter.CmykToHex(new CMYK(0, 100, 0, 100));
 ```
+
+## ColorComparer
+```
+bool result = ColorComparer.Equals(new RGB(100, 100, 100), new HEX("#FFFFFF"));
+```
+
+You can use **Equals** method with all pair color combinations.
