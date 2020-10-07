@@ -30,6 +30,51 @@ namespace ColorHelper
                 (byte)Math.Round(k * 100));
         }
 
+        public static HSL RgbToHsl(RGB rgb)
+        {
+            double modifiedR, modifiedG, modifiedB, min, max, delta, h, s, l;
+
+            modifiedR = rgb.R / 255.0;
+            modifiedG = rgb.G / 255.0;
+            modifiedB = rgb.B / 255.0;
+
+            min = new List<double>() { modifiedR, modifiedG, modifiedB }.Min();
+            max = new List<double>() { modifiedR, modifiedG, modifiedB }.Max();
+            delta = max - min;
+            l = (min + max) / 2;
+
+            if (delta == 0)
+            {
+                h = 0;
+                s = 0;
+            }
+            else
+            {
+                s = (l <= 0.5) ? (delta / (min + max)) : (delta / (2 - max - min));
+
+                if (modifiedR == max)
+                {
+                    h = (modifiedG - modifiedB) / 6 / delta;
+                }
+                else if (modifiedG == max)
+                {
+                    h = (1.0 / 3) + ((modifiedB - modifiedR) / 6 / delta);
+                }
+                else
+                {
+                    h = (2.0 / 3) + ((modifiedR - modifiedG) / 6 / delta);
+                }
+
+                h = (h < 0) ? ++h : h;
+                h = (h > 1) ? --h : h;
+            }
+
+            return new HSL(
+                (int)Math.Round(h * 360),
+                (byte)Math.Round(s * 100),
+                (byte)Math.Round(l * 100));
+        }
+
         public static RGB HexToRgb(HEX hex)
         {
             int value = Convert.ToInt32(hex.Value, 16);

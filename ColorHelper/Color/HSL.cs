@@ -2,11 +2,11 @@
 {
     public class HSL : IColor
     {
-        public byte H { get; set; }
+        public int H { get; set; }
         public byte S { get; set; }
         public byte L { get; set; }
 
-        public HSL(byte h, byte s, byte l)
+        public HSL(int h, byte s, byte l)
         {
             this.H = h;
             this.S = s;
