@@ -13,16 +13,16 @@ namespace ColorHelper
 
         public static CMYK RgbToCmyk(RGB rgb)
         {
-            double r, g, b, c, m, y, k;
+            double modifiedR, modifiedG, modifiedB, c, m, y, k;
 
-            r = rgb.R;
-            g = rgb.G;
-            b = rgb.B;
+            modifiedR = rgb.R / 255.0;
+            modifiedG = rgb.G / 255.0;
+            modifiedB = rgb.B / 255.0;
 
-            k = 1 - new List<double>() { (r / 255), (g / 255), (b / 255) }.Max();
-            c = (1 - (r / 255) - k) / (1 - k);
-            m = (1 - (g / 255) - k) / (1 - k);
-            y = (1 - (b / 255) - k) / (1 - k);
+            k = 1 - new List<double>() { modifiedR, modifiedG, modifiedB }.Max();
+            c = (1 - modifiedR - k) / (1 - k);
+            m = (1 - modifiedG - k) / (1 - k);
+            y = (1 - modifiedB - k) / (1 - k);
 
             return new CMYK((byte)Math.Round(c * 100),
                 (byte)Math.Round(m * 100),
