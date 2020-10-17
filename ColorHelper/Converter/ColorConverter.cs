@@ -101,5 +101,49 @@ namespace ColorHelper
         {
             return RgbToHex(CmykToRgb(cmyk));
         }
+
+        public static RGB HslToRgb(HSL hsl)
+        {
+            double modifiedH, modifiedS, modifiedL, r = 1, g = 1, b = 1, q, p;
+
+            modifiedH = hsl.H / 360.0;
+            modifiedS = hsl.S / 100.0;
+            modifiedL = hsl.L / 100.0;
+
+            q = (modifiedL < 0.5) ? modifiedL * (1 + modifiedS) : modifiedL + modifiedS - modifiedL * modifiedS;
+            p = 2 * modifiedL - q;
+
+            if (modifiedS != 0)
+            {
+                r = GetHue(p, q, modifiedH + 1.0 / 3);
+                g = GetHue(p, q, modifiedH);
+                b = GetHue(p, q, modifiedH - 1.0 / 3);
+            }
+
+            return new RGB((byte)Math.Round(r * 255), (byte)Math.Round(g * 255), (byte)Math.Round(b * 255));
+        }
+
+        private static double GetHue(double p, double q, double t)
+        {
+            double value = p;
+
+            if (t < 0) t++;
+            if (t > 1) t--;
+
+            if (t < 1.0 / 6)
+            {
+                value = p + (q - p) * 6 * t;
+            }
+            else if (t < 1.0 / 2)
+            {
+                value = q;
+            }
+            else if (t < 2.0 / 3)
+            {
+                value = p + (q - p) * (2.0 / 3 - t) * 6;
+            }
+
+            return value;
+        }
     }
 }
