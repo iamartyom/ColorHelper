@@ -89,6 +89,11 @@ namespace ColorHelper
             return RgbToCmyk(HexToRgb(hex));
         }
 
+        public static HSL HexToHsl(HEX hex)
+        {
+            return RgbToHsl(HexToRgb(hex));
+        }
+
         public static RGB CmykToRgb(CMYK cmyk)
         {
             return new RGB(
