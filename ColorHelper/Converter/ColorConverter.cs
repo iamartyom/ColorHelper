@@ -107,6 +107,11 @@ namespace ColorHelper
             return RgbToHex(CmykToRgb(cmyk));
         }
 
+        public static HSL CmykToHsl(CMYK cmyk)
+        {
+            return RgbToHsl(CmykToRgb(cmyk));
+        }
+
         public static RGB HslToRgb(HSL hsl)
         {
             double modifiedH, modifiedS, modifiedL, r = 1, g = 1, b = 1, q, p;
