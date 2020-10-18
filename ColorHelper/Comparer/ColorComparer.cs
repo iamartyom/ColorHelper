@@ -17,6 +17,11 @@
             return source.Equals(ColorConverter.CmykToRgb(target));
         }
 
+        public static bool Equals(RGB source, HSL target)
+        {
+            return source.Equals(ColorConverter.HslToRgb(target));
+        }
+
         public static bool Equals(HEX source, RGB target)
         {
             return source.Equals(ColorConverter.RgbToHex(target));
@@ -32,6 +37,11 @@
             return source.Equals(ColorConverter.CmykToHex(target));
         }
 
+        public static bool Equals(HEX source, HSL target)
+        {
+            return source.Equals(ColorConverter.HslToHex(target));
+        }
+
         public static bool Equals(CMYK source, RGB target)
         {
             return source.Equals(ColorConverter.RgbToCmyk(target));
@@ -42,9 +52,29 @@
             return source.Equals(ColorConverter.HexToCmyk(target));
         }
 
+        public static bool Equals(CMYK source, HSL target)
+        {
+            return source.Equals(ColorConverter.HslToCmyk(target));
+        }
+
         public static bool Equals(CMYK source, CMYK target)
         {
             return source.Equals(target);
+        }
+
+        public static bool Equals(HSL source, RGB target)
+        {
+            return source.Equals(ColorConverter.RgbToHsl(target));
+        }
+
+        public static bool Equals(HSL source, HEX target)
+        {
+            return source.Equals(ColorConverter.HexToHsl(target));
+        }
+
+        public static bool Equals(HSL source, CMYK target)
+        {
+            return source.Equals(ColorConverter.CmykToHsl(target));
         }
     }
 }
