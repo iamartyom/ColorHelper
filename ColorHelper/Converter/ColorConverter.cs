@@ -155,5 +155,10 @@ namespace ColorHelper
 
             return value;
         }
+
+        public static HEX HslToHex(HSL hsl)
+        {
+            return RgbToHex(HslToRgb(hsl));
+        }
     }
 }
