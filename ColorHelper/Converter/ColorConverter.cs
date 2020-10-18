@@ -160,5 +160,10 @@ namespace ColorHelper
         {
             return RgbToHex(HslToRgb(hsl));
         }
+
+        public static CMYK HslToCmyk(HSL hsl)
+        {
+            return RgbToCmyk(HslToRgb(hsl));
+        }
     }
 }
