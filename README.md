@@ -4,6 +4,7 @@ Supported color types:
 - RGB
 - HEX
 - CMYK
+- HSL
 
 This library provides several useful classes:
 
@@ -19,6 +20,11 @@ Convert Rgb to Cmyk:
 CMYK cmyk = ColorConverter.RgbToCmyk(new RGB(10, 20, 30));
 ```
 
+Convert Rgb to Hsl:
+```
+CMYK cmyk = ColorConverter.RgbToHsl(new RGB(10, 20, 30));
+```
+
 Convert Hex to Rgb:
 ```
 RGB rgb = ColorConverter.HexToRgb(new HEX("#00FF00"));
@@ -29,6 +35,11 @@ Convert Hex to Cmyk:
 CMYK cmyk = ColorConverter.HexToCmyk(new HEX("#00FF00"));
 ```
 
+Convert Hex to Hsl:
+```
+CMYK cmyk = ColorConverter.HexToHsl(new HEX("#00FF00"));
+```
+
 Convert Cmyk to Rgb:
 ```
 RGB rgb = ColorConverter.CmykToRgb(new CMYK(0, 100, 0, 100));
@@ -37,6 +48,26 @@ RGB rgb = ColorConverter.CmykToRgb(new CMYK(0, 100, 0, 100));
 Convert Cmyk to Hex:
 ```
 HEX hex = ColorConverter.CmykToHex(new CMYK(0, 100, 0, 100));
+```
+
+Convert Cmyk to Hsl:
+```
+HEX hex = ColorConverter.CmykToHsl(new CMYK(0, 100, 0, 100));
+```
+
+Convert Hsl to Rgb:
+```
+HEX hex = ColorConverter.HslToRgb(new HSL(0, 0, 100));
+```
+
+Convert Hsl to Hex:
+```
+HEX hex = ColorConverter.HslToHex(new HSL(0, 0, 100));
+```
+
+Convert Hsl to Cmyk:
+```
+HEX hex = ColorConverter.HslToCmyk(new HSL(0, 0, 100));
 ```
 
 ## ColorComparer
@@ -56,44 +87,35 @@ Get random color:
 RGB rgb = ColorGenerator.GetRandomColor<RGB>();
 HEX hex = ColorGenerator.GetRandomColor<HEX>();
 CMYK cmyk = ColorGenerator.GetRandomColor<CMYK>();
+HSL hsl = ColorGenerator.GetRandomColor<HSL>();
 ```
 
 Get light random color:
 
 ```
-RGB rgb = ColorGenerator.GetLightRandomColor<RGB>();
-HEX hex = ColorGenerator.GetLightRandomColor<HEX>();
-CMYK cmyk = ColorGenerator.GetLightRandomColor<CMYK>();
+RGB rgb = ColorGenerator.GetLightRandomColor<type>();
 ```
 
 Get dark random color:
 
 ```
-RGB rgb = ColorGenerator.GetDarkRandomColor<RGB>();
-HEX hex = ColorGenerator.GetDarkRandomColor<HEX>();
-CMYK cmyk = ColorGenerator.GetDarkRandomColor<CMYK>();
+RGB rgb = ColorGenerator.GetDarkRandomColor<type>();
 ```
 
 Get red random color:
 
 ```
-RGB rgb = ColorGenerator.GetRedRandomColor<RGB>();
-HEX hex = ColorGenerator.GetRedRandomColor<HEX>();
-CMYK cmyk = ColorGenerator.GetRedRandomColor<CMYK>();
+RGB rgb = ColorGenerator.GetRedRandomColor<type>();
 ```
 
 Get green random color:
 
 ```
-RGB rgb = ColorGenerator.GetGreenRandomColor<RGB>();
-HEX hex = ColorGenerator.GetGreenRandomColor<HEX>();
-CMYK cmyk = ColorGenerator.GetGreenRandomColor<CMYK>();
+RGB rgb = ColorGenerator.GetGreenRandomColor<type>();
 ```
 
 Get blue random color:
 
 ```
-RGB rgb = ColorGenerator.GetBlueRandomColor<RGB>();
-HEX hex = ColorGenerator.GetBlueRandomColor<HEX>();
-CMYK cmyk = ColorGenerator.GetBlueRandomColor<CMYK>();
+RGB rgb = ColorGenerator.GetBlueRandomColor<type>();
 ```
