@@ -25,6 +25,13 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void RgbToHsl()
+        {
+            var result = ColorConverter.RgbToHsl(new RGB(20, 20, 80));
+            Assert.AreEqual(new HSL(240, 60, 20), result);
+        }
+
+        [Test]
         public void HexToRgb()
         {
             var result = ColorConverter.HexToRgb(new HEX("#6E34BF"));
@@ -39,6 +46,13 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void HexToHsl()
+        {
+            var result = ColorConverter.HexToHsl(new HEX("#323264"));
+            Assert.AreEqual(new HSL(240, 33, 29), result);
+        }
+
+        [Test]
         public void CmykToRgb()
         {
             var result = ColorConverter.CmykToRgb(new CMYK(65, 0, 40, 30));
@@ -50,6 +64,34 @@ namespace ConsoleHelper.Tests
         {
             var result = ColorConverter.CmykToHex(new CMYK(2, 0, 31, 9));
             Assert.AreEqual(new HEX("#E3E8A0"), result);
+        }
+
+        [Test]
+        public void CmykToHsl()
+        {
+            var result = ColorConverter.CmykToHsl(new CMYK(10, 10, 10, 10));
+            Assert.AreEqual(new HSL(0, 0, 81), result);
+        }
+
+        [Test]
+        public void HslToRgb()
+        {
+            var result = ColorConverter.HslToRgb(new HSL(201, 78, 20));
+            Assert.AreEqual(new RGB(11, 63, 91), result);
+        }
+
+        [Test]
+        public void HslToHex()
+        {
+            var result = ColorConverter.HslToHex(new HSL(260, 77, 31));
+            Assert.AreEqual(new HEX("#3B128C"), result);
+        }
+
+        [Test]
+        public void HslToCmyk()
+        {
+            var result = ColorConverter.HslToCmyk(new HSL(336, 70, 30));
+            Assert.AreEqual(new CMYK(0, 82, 49, 49), result);
         }
     }
 }
