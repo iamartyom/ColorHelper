@@ -5,7 +5,7 @@
     <Authors>Artyom Gritsuk</Authors>
     <RepositoryUrl>https://github.com/iamartyom/ColorHelper</RepositoryUrl>
     <PackageProjectUrl>https://github.com/iamartyom/ColorHelper</PackageProjectUrl>
-    <PackageTags>Color, Converter, RGB, HEX, CMYK</PackageTags>
+    <PackageTags>Color, Converter, RGB, HEX, CMYK, HSL</PackageTags>
     <PackageReleaseNotes>Added ColorGenerator class which contains logic for simple get random colors</PackageReleaseNotes>
     <Description>This library contains several useful classes:
 
@@ -13,10 +13,16 @@
 
 RgbToHex
 RgbToCmyk
+RgbToHsl
 HexToRgb
 HexToCmyk
+HexToHsl
 CmykToRgb
 CmykToHex
+CmykToHsl
+HslToRgb
+HslToHex
+HslToCmyk
 
 - ColorComparer
 
@@ -30,7 +36,7 @@ GetGreenRandomColor
 GetBlueRandomColor</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
   </PropertyGroup>
 
 </Project>
