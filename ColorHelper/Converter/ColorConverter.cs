@@ -112,6 +112,19 @@ namespace ColorHelper
             return RgbToHsl(CmykToRgb(cmyk));
         }
 
+        public static HSL HsvToHsl(HSV hsv)
+        {
+            double modifiedS, modifiedV, hslS, hslL;
+
+            modifiedS = hsv.S / 100.0;
+            modifiedV = hsv.V / 100.0;
+
+            hslL = modifiedV * (1 - modifiedS / 2);
+            hslS = (hslL == 0 || hslL == 1) ? 0 : (modifiedV - hslL) / Math.Min(hslL, 1 - hslL);
+
+            return new HSL(hsv.H, (byte)Math.Round(hslS * 100), (byte)Math.Round(hslL * 100));
+        }
+
         public static RGB HslToRgb(HSL hsl)
         {
             double modifiedH, modifiedS, modifiedL, r = 1, g = 1, b = 1, q, p;
