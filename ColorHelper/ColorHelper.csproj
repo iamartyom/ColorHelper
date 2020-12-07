@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Artyom Gritsuk</Authors>
     <RepositoryUrl>https://github.com/iamartyom/ColorHelper</RepositoryUrl>
     <PackageProjectUrl>https://github.com/iamartyom/ColorHelper</PackageProjectUrl>
-    <PackageTags>Color, Converter, RGB, HEX, CMYK, HSL</PackageTags>
-    <PackageReleaseNotes>Added ColorGenerator class which contains logic for simple get random colors</PackageReleaseNotes>
+    <PackageTags>Color, Converter, RGB, HEX, CMYK, HSV, HSL</PackageTags>
+    <PackageReleaseNotes>Add HSV color type</PackageReleaseNotes>
     <Description>This library contains several useful classes:
 
 - ColorConverter
@@ -30,13 +30,10 @@ HslToCmyk
 
 GetRandomColor
 GetLightRandomColor
-GetDarkRandomColor
-GetRedRandomColor
-GetGreenRandomColor
-GetBlueRandomColor</Description>
+GetDarkRandomColor</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.3.1</Version>
+    <Version>1.4.0</Version>
     <PackageIcon>logo.jpg</PackageIcon>
   </PropertyGroup>
 
