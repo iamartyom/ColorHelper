@@ -25,6 +25,13 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void RgbToHsv()
+        {
+            var result = ColorConverter.RgbToHsv(new RGB(137, 32, 179));
+            Assert.AreEqual(new HSV(283, 82, 70), result);
+        }
+
+        [Test]
         public void RgbToHsl()
         {
             var result = ColorConverter.RgbToHsl(new RGB(20, 20, 80));
@@ -43,6 +50,13 @@ namespace ConsoleHelper.Tests
         {
             var result = ColorConverter.HexToCmyk(new HEX("#6984CF"));
             Assert.AreEqual(new CMYK(49, 36, 0, 19), result);
+        }
+
+        [Test]
+        public void HexToHsv()
+        {
+            var result = ColorConverter.HexToHsv(new HEX("#3278C2"));
+            Assert.AreEqual(new HSV(211, 74, 76), result);
         }
 
         [Test]
@@ -67,10 +81,45 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void CmykToHsv()
+        {
+            var result = ColorConverter.CmykToHsv(new CMYK(56, 0, 34, 32));
+            Assert.AreEqual(new HSV(144, 56, 68), result);
+        }
+
+        [Test]
         public void CmykToHsl()
         {
             var result = ColorConverter.CmykToHsl(new CMYK(10, 10, 10, 10));
             Assert.AreEqual(new HSL(0, 0, 81), result);
+        }
+
+        [Test]
+        public void HsvToRgb()
+        {
+            var result = ColorConverter.HsvToRgb(new HSV(240, 80, 64));
+            Assert.AreEqual(new RGB(32, 32, 162), result);
+        }
+
+        [Test]
+        public void HsvToHex()
+        {
+            var result = ColorConverter.HsvToHex(new HSV(240, 80, 64));
+            Assert.AreEqual(new HEX("2020A2"), result);
+        }
+
+        [Test]
+        public void HsvToCmyk()
+        {
+            var result = ColorConverter.HsvToCmyk(new HSV(240, 80, 64));
+            Assert.AreEqual(new CMYK(80, 80, 0, 36), result);
+        }
+
+        [Test]
+        public void HsvToHsl()
+        {
+            var result = ColorConverter.HsvToHsl(new HSV(240, 80, 64));
+            Assert.AreEqual(new HSL(240, 67, 38), result);
         }
 
         [Test]
@@ -92,6 +141,13 @@ namespace ConsoleHelper.Tests
         {
             var result = ColorConverter.HslToCmyk(new HSL(336, 70, 30));
             Assert.AreEqual(new CMYK(0, 82, 49, 49), result);
+        }
+
+        [Test]
+        public void HslToHsv()
+        {
+            var result = ColorConverter.HslToHsv(new HSL(338, 56, 18));
+            Assert.AreEqual(new HSV(338, 72, 28), result);
         }
     }
 }
