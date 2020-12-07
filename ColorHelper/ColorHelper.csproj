@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -13,16 +13,24 @@
 
 RgbToHex
 RgbToCmyk
+RgbToHsv
 RgbToHsl
 HexToRgb
 HexToCmyk
+HexToHsv
 HexToHsl
 CmykToRgb
 CmykToHex
+CmykToHsv
 CmykToHsl
+HsvToRgb
+HsvToHex
+HsvToCmyk
+HsvToHsl
 HslToRgb
 HslToHex
 HslToCmyk
+HslToHsv
 
 - ColorComparer
 
