@@ -4,6 +4,7 @@ Supported color types:
 - RGB
 - HEX
 - CMYK
+- HSV
 - HSL
 
 This library provides several useful classes:
@@ -100,22 +101,4 @@ Get dark random color:
 
 ```
 RGB rgb = ColorGenerator.GetDarkRandomColor<type>();
-```
-
-Get red random color:
-
-```
-RGB rgb = ColorGenerator.GetRedRandomColor<type>();
-```
-
-Get green random color:
-
-```
-RGB rgb = ColorGenerator.GetGreenRandomColor<type>();
-```
-
-Get blue random color:
-
-```
-RGB rgb = ColorGenerator.GetBlueRandomColor<type>();
 ```
