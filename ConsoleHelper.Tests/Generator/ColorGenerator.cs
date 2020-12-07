@@ -59,29 +59,5 @@ namespace ConsoleHelper.Tests
             Assert.That(result.G, Is.LessThanOrEqualTo(80));
             Assert.That(result.B, Is.LessThanOrEqualTo(80));
         }
-
-        [Test]
-        [Repeat(10000)]
-        public void GetRedRandomColor()
-        {
-            var result = ColorGenerator.GetRedRandomColor<RGB>();
-            Assert.True(result.G == 0 && result.B == 0);
-        }
-
-        [Test]
-        [Repeat(10000)]
-        public void GetGreenRandomColor()
-        {
-            var result = ColorGenerator.GetGreenRandomColor<RGB>();
-            Assert.True(result.R == 0 && result.B == 0);
-        }
-
-        [Test]
-        [Repeat(10000)]
-        public void GetBlueRandomColor()
-        {
-            var result = ColorGenerator.GetBlueRandomColor<RGB>();
-            Assert.True(result.R == 0 && result.G == 0);
-        }
     }
 }

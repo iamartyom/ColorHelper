@@ -33,33 +33,6 @@ namespace ColorHelper
             return GetRandomColor<T>(filter);
         }
 
-        public static T GetRedRandomColor<T>() where T : IColor
-        {
-            RgbRandomColorFilter filter = new RgbRandomColorFilter();
-            filter.maxG = 0;
-            filter.maxB = 0;
-
-            return GetRandomColor<T>(filter);
-        }
-
-        public static T GetGreenRandomColor<T>() where T : IColor
-        {
-            RgbRandomColorFilter filter = new RgbRandomColorFilter();
-            filter.maxR = 0;
-            filter.maxB = 0;
-
-            return GetRandomColor<T>(filter);
-        }
-
-        public static T GetBlueRandomColor<T>() where T : IColor
-        {
-            RgbRandomColorFilter filter = new RgbRandomColorFilter();
-            filter.maxR = 0;
-            filter.maxG = 0;
-
-            return GetRandomColor<T>(filter);
-        }
-
         private static T GetRandomColor<T>(RgbRandomColorFilter filter) where T : IColor
         {
             Random random = new Random(DateTime.Now.Millisecond);
