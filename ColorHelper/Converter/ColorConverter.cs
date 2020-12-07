@@ -30,6 +30,11 @@ namespace ColorHelper
                 (byte)Math.Round(k * 100));
         }
 
+        public static HSV RgbToHsv(RGB rgb)
+        {
+            return HslToHsv(RgbToHsl(rgb));
+        }
+
         public static HSL RgbToHsl(RGB rgb)
         {
             double modifiedR, modifiedG, modifiedB, min, max, delta, h, s, l;
@@ -89,6 +94,11 @@ namespace ColorHelper
             return RgbToCmyk(HexToRgb(hex));
         }
 
+        public static HSV HexToHsv(HEX hex)
+        {
+            return HslToHsv(HexToHsl(hex));
+        }
+
         public static HSL HexToHsl(HEX hex)
         {
             return RgbToHsl(HexToRgb(hex));
@@ -107,9 +117,29 @@ namespace ColorHelper
             return RgbToHex(CmykToRgb(cmyk));
         }
 
+        public static HSV CmykToHsv(CMYK cmyk)
+        {
+            return HslToHsv(CmykToHsl(cmyk));
+        }
+
         public static HSL CmykToHsl(CMYK cmyk)
         {
             return RgbToHsl(CmykToRgb(cmyk));
+        }
+
+        public static RGB HsvToRgb(HSV hsv)
+        {
+            return HslToRgb(HsvToHsl(hsv));
+        }
+
+        public static HEX HsvToHex(HSV hsv)
+        {
+            return HslToHex(HsvToHsl(hsv));
+        }
+
+        public static CMYK HsvToCmyk(HSV hsv)
+        {
+            return HslToCmyk(HsvToHsl(hsv));
         }
 
         public static HSL HsvToHsl(HSV hsv)
