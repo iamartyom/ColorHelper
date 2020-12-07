@@ -21,9 +21,14 @@ Convert Rgb to Cmyk:
 CMYK cmyk = ColorConverter.RgbToCmyk(new RGB(10, 20, 30));
 ```
 
+Convert Rgb to Hsv:
+```
+HSV hsv = ColorConverter.RgbToHsv(new RGB(10, 20, 30));
+```
+
 Convert Rgb to Hsl:
 ```
-CMYK cmyk = ColorConverter.RgbToHsl(new RGB(10, 20, 30));
+HSL hsl = ColorConverter.RgbToHsl(new RGB(10, 20, 30));
 ```
 
 Convert Hex to Rgb:
@@ -36,9 +41,14 @@ Convert Hex to Cmyk:
 CMYK cmyk = ColorConverter.HexToCmyk(new HEX("#00FF00"));
 ```
 
+Convert Hex to Hsv:
+```
+HSV hsv = ColorConverter.HexToHsv(new HEX("#00FF00"));
+```
+
 Convert Hex to Hsl:
 ```
-CMYK cmyk = ColorConverter.HexToHsl(new HEX("#00FF00"));
+HSL hsl = ColorConverter.HexToHsl(new HEX("#00FF00"));
 ```
 
 Convert Cmyk to Rgb:
@@ -51,14 +61,39 @@ Convert Cmyk to Hex:
 HEX hex = ColorConverter.CmykToHex(new CMYK(0, 100, 0, 100));
 ```
 
+Convert Cmyk to Hsv:
+```
+HSV hsv = ColorConverter.CmykToHsv(new CMYK(0, 100, 0, 100));
+```
+
 Convert Cmyk to Hsl:
 ```
-HEX hex = ColorConverter.CmykToHsl(new CMYK(0, 100, 0, 100));
+HSL hsl = ColorConverter.CmykToHsl(new CMYK(0, 100, 0, 100));
+```
+
+Convert Hsv to Rgb:
+```
+RGB rgb = ColorConverter.HsvToRgb(new HSL(0, 0, 100));
+```
+
+Convert Hsv to Hex:
+```
+HEX hex = ColorConverter.HsvToHex(new HSL(0, 0, 100));
+```
+
+Convert Hsv to Cmyk:
+```
+CMYK cmyk = ColorConverter.HsvToCmyk(new HSL(0, 0, 100));
+```
+
+Convert Hsv to Hsl:
+```
+HSL hsl = ColorConverter.HsvToHsl(new HSL(0, 0, 100));
 ```
 
 Convert Hsl to Rgb:
 ```
-HEX hex = ColorConverter.HslToRgb(new HSL(0, 0, 100));
+RGB rgb = ColorConverter.HslToRgb(new HSL(0, 0, 100));
 ```
 
 Convert Hsl to Hex:
@@ -68,7 +103,12 @@ HEX hex = ColorConverter.HslToHex(new HSL(0, 0, 100));
 
 Convert Hsl to Cmyk:
 ```
-HEX hex = ColorConverter.HslToCmyk(new HSL(0, 0, 100));
+CMYK cmyk = ColorConverter.HslToCmyk(new HSL(0, 0, 100));
+```
+
+Convert Hsl to Hsv:
+```
+HSV hsv = ColorConverter.HslToHsv(new HSL(0, 0, 100));
 ```
 
 ## ColorComparer
@@ -88,6 +128,7 @@ Get random color:
 RGB rgb = ColorGenerator.GetRandomColor<RGB>();
 HEX hex = ColorGenerator.GetRandomColor<HEX>();
 CMYK cmyk = ColorGenerator.GetRandomColor<CMYK>();
+HSV hsv = ColorGenerator.GetRandomColor<HSV>();
 HSL hsl = ColorGenerator.GetRandomColor<HSL>();
 ```
 
