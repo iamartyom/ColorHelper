@@ -60,6 +60,24 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void Equals_RgbHsv_Correct()
+        {
+            var source = new RGB(10, 10, 20);
+            var target = new HSV(240, 50, 8);
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_RgbHsv_Incorrect()
+        {
+            var source = new RGB(10, 10, 20);
+            var target = new HSV(100, 100, 100);
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
         public void Equals_RgbHsl_Correct()
         {
             var source = new RGB(158, 0, 92);
@@ -127,6 +145,24 @@ namespace ConsoleHelper.Tests
         {
             var source = new CMYK(100, 0, 100, 0);
             var target = new HEX("#121212");
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HexHsv_Correct()
+        {
+            var source = new HSV(120, 100, 10);
+            var target = new HEX("#001A00");
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HexHsv_Incorrect()
+        {   
+            var source = new HSV(120, 100, 10);
+            var target = new HEX("#ffffff");
 
             Assert.False(ColorComparer.Equals(source, target));
         }
@@ -204,6 +240,24 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void Equals_CmykHsv_Correct()
+        {
+            var source = new CMYK(0, 0, 100, 60);
+            var target = new HSV(60, 100, 40);
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_CmykHsv_Incorrect()
+        {
+            var source = new CMYK(10, 10, 10, 100);
+            var target = new HSV(30, 30, 30);
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
         public void Equals_CmykHsl_Correct()
         {
             var source = new CMYK(0, 0, 100, 60);
@@ -217,6 +271,78 @@ namespace ConsoleHelper.Tests
         {
             var source = new CMYK(10, 10, 10, 100);
             var target = new HSL(0, 0, 20);
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvRgb_Correct()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new RGB(31, 20, 51);
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvRgb_Incorrect()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new RGB(0, 0, 0);
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvHex_Correct()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new HEX("1F1433");
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvHex_Incorrect()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new HEX("0000FF");
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvCmyk_Correct()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new CMYK(39, 61, 0, 80);
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvCmyk_Incorrect()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new CMYK(0, 100, 0, 100);
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvHsl_Correct()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new HSL(261, 44, 14);
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HsvHsl_Incorrect()
+        {
+            var source = new HSV(261, 61, 20);
+            var target = new HSL(0, 0, 0);
 
             Assert.False(ColorComparer.Equals(source, target));
         }
@@ -271,6 +397,24 @@ namespace ConsoleHelper.Tests
         {
             var source = new HSL(20, 20, 80);
             var target = new CMYK(0, 10, 0, 10);
+
+            Assert.False(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HslHsv_Correct()
+        {
+            var source = new HSL(360, 100, 50);
+            var target = new HSV(360, 100, 100);
+
+            Assert.True(ColorComparer.Equals(source, target));
+        }
+
+        [Test]
+        public void Equals_HslHsv_Incorrect()
+        {
+            var source = new HSL(360, 100, 50);
+            var target = new HSV(0, 0, 0);
 
             Assert.False(ColorComparer.Equals(source, target));
         }
