@@ -2,11 +2,11 @@
 {
     public class XYZ : IColor
     {
-        public float X { get; set; }
-        public float Y { get; set; }
-        public float Z { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double Z { get; set; }
 
-        public XYZ(float x, float y, float z)
+        public XYZ(double x, double y, double z)
         {
             this.X = x;
             this.Y = y;
