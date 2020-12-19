@@ -80,6 +80,28 @@ namespace ColorHelper
                 (byte)Math.Round(l * 100));
         }
 
+        public static XYZ RgbToXyz(RGB rgb)
+        {
+            double[] modifiedRGB = new double[] { rgb.R / 255.0, rgb.G / 255.0, rgb.B / 255.0 };
+            double[] sRGB = new double[3];
+
+            for(var x = 0; x < modifiedRGB.Length; x++)
+            {
+                sRGB[x] =
+                    (modifiedRGB[x] > 0.4045) ?
+                        Math.Pow((modifiedRGB[x] + 0.055) / 1.055, 2.4) :
+                        (modifiedRGB[x] / 12.92);
+
+                sRGB[x] *= 100;
+            }
+
+            return new XYZ(
+                (sRGB[0] * 0.4124 + sRGB[1] * 0.3576 + sRGB[2] * 0.1805),
+                (sRGB[0] * 0.2126 + sRGB[1] * 0.7152 + sRGB[2] * 0.0722),
+                (sRGB[0] * 0.0193 + sRGB[1] * 0.1192 + sRGB[2] * 0.9505)
+            );
+        }
+
         public static RGB HexToRgb(HEX hex)
         {
             int value = Convert.ToInt32(hex.Value, 16);
