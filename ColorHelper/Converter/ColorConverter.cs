@@ -249,5 +249,22 @@ namespace ColorHelper
 
             return new HSV(hsl.H, (byte)Math.Round(hsvS * 100), (byte)Math.Round(hsvV * 100));
         }
+
+        public static RGB XyzToRgb(XYZ xyz)
+        {
+            double modifiedX = xyz.X / 100.0, modifiedY = xyz.Y / 100.0, modifiedZ = xyz.Z / 100.0;
+            
+            double[] rgb = new double[3];
+            rgb[0] = modifiedX * 3.2410 + modifiedY * (-1.5374) + modifiedZ * (-0.4986);
+            rgb[1] = modifiedX * (-0.9692) + modifiedY * 1.8760 + modifiedZ * 0.0416;
+            rgb[2] = modifiedX * 0.056 + modifiedY * (-0.2040) + modifiedZ * 1.0570;
+
+            for (var x = 0; x < rgb.Length; x++)
+            {
+                rgb[x] = (rgb[x] <= 0.0031308) ? 12.92 * rgb[x] : 1.055 * Math.Pow(rgb[x], 0.41666666666) - 0.055;
+            }
+            
+            return new RGB((byte)Math.Round(rgb[0] * 255), (byte)Math.Round(rgb[1] * 255), (byte)Math.Round(rgb[2] * 255));
+        }
     }
 }
