@@ -102,6 +102,21 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void HsvToRgbBlack()
+        {
+            var result = ColorConverter.HsvToRgb(new HSV(0, 0, 0));
+            Assert.AreEqual(new RGB(0, 0, 0), result);
+        }
+
+        [Test]
+        public void HsvToRgbWhite()
+        {
+            var result = ColorConverter.HsvToRgb(new HSV(0, 0, 100));
+            Assert.AreEqual(new RGB(255, 255, 255), result);
+        }
+
+
+        [Test]
         public void HsvToHex()
         {
             var result = ColorConverter.HsvToHex(new HSV(240, 80, 64));
@@ -130,6 +145,21 @@ namespace ConsoleHelper.Tests
         }
 
         [Test]
+        public void HslToRgbBlack()
+        {
+            var result = ColorConverter.HslToRgb(new HSL(0, 0, 0));
+            Assert.AreEqual(new RGB(0, 0, 0), result);
+        }
+
+        [Test]
+        public void HslToRgbWhite()
+        {
+            var result = ColorConverter.HslToRgb(new HSL(0, 0, 100));
+            Assert.AreEqual(new RGB(255, 255, 255), result);
+        }
+
+
+        [Test]
         public void HslToHex()
         {
             var result = ColorConverter.HslToHex(new HSL(260, 77, 31));
@@ -149,5 +179,10 @@ namespace ConsoleHelper.Tests
             var result = ColorConverter.HslToHsv(new HSL(338, 56, 18));
             Assert.AreEqual(new HSV(338, 72, 28), result);
         }
+
+
+      
+ 
+
     }
 }

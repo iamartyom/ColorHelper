@@ -188,7 +188,12 @@ namespace ColorHelper
             q = (modifiedL < 0.5) ? modifiedL * (1 + modifiedS) : modifiedL + modifiedS - modifiedL * modifiedS;
             p = 2 * modifiedL - q;
 
-            if (modifiedS != 0)
+            if (modifiedL == 0)  // if the lightness value is 0 it will always be black
+            {
+                r = 0;
+                g = 0;
+                b = 0;
+            } else if (modifiedS != 0)
             {
                 r = GetHue(p, q, modifiedH + 1.0 / 3);
                 g = GetHue(p, q, modifiedH);
