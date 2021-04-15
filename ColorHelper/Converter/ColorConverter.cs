@@ -125,6 +125,11 @@ namespace ColorHelper
         {
             return RgbToHsl(HexToRgb(hex));
         }
+        
+        public static XYZ HexToXyz(HEX hex)
+        {
+            return RgbToXyz(HexToRgb(hex));
+        }
 
         public static RGB CmykToRgb(CMYK cmyk)
         {
@@ -147,6 +152,11 @@ namespace ColorHelper
         public static HSL CmykToHsl(CMYK cmyk)
         {
             return RgbToHsl(CmykToRgb(cmyk));
+        }
+        
+        public static XYZ CmykToXyz(CMYK cmyk)
+        {
+            return RgbToXyz(CmykToRgb(cmyk));
         }
 
         public static RGB HsvToRgb(HSV hsv)
@@ -175,6 +185,11 @@ namespace ColorHelper
             hslS = (hslL == 0 || hslL == 1) ? 0 : (modifiedV - hslL) / Math.Min(hslL, 1 - hslL);
 
             return new HSL(hsv.H, (byte)Math.Round(hslS * 100), (byte)Math.Round(hslL * 100));
+        }
+        
+        public static XYZ HsvToXyz(HSV hsv)
+        {
+            return RgbToXyz(HsvToRgb(hsv));
         }
 
         public static RGB HslToRgb(HSL hsl)
@@ -244,6 +259,11 @@ namespace ColorHelper
 
             return new HSV(hsl.H, (byte)Math.Round(hsvS * 100), (byte)Math.Round(hsvV * 100));
         }
+        
+        public static XYZ HslToXyz(HSL hsl)
+        {
+            return RgbToXyz(HslToRgb(hsl));
+        }
 
         public static RGB XyzToRgb(XYZ xyz)
         {
@@ -260,6 +280,26 @@ namespace ColorHelper
             }
             
             return new RGB((byte)Math.Round(rgb[0] * 255), (byte)Math.Round(rgb[1] * 255), (byte)Math.Round(rgb[2] * 255));
+        }
+        
+        public static HEX XyzToHex(XYZ xyz)
+        {
+            return RgbToHex(XyzToRgb(xyz));
+        }
+        
+        public static CMYK XyzToCmyk(XYZ xyz)
+        {
+            return RgbToCmyk(XyzToRgb(xyz));
+        }
+        
+        public static HSV XyzToHsv(XYZ xyz)
+        {
+            return RgbToHsv(XyzToRgb(xyz));
+        }
+        
+        public static HSL XyzToHsl(XYZ xyz)
+        {
+            return RgbToHsl(XyzToRgb(xyz));
         }
     }
 }
