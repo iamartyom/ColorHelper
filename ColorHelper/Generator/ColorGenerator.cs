@@ -67,6 +67,10 @@ namespace ColorHelper
             {
                 return (T)(object)ColorConverter.RgbToHsl(rgb);
             }
+            else if (typeof(T) == typeof(XYZ))
+            {
+                return (T)(object)ColorConverter.RgbToXyz(rgb);
+            }
             else
             {
                 throw new ArgumentException("Incorrect class type");
