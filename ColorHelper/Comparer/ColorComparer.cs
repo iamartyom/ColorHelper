@@ -26,6 +26,11 @@
         {
             return source.Equals(ColorConverter.HslToRgb(target));
         }
+        
+        public static bool Equals(RGB source, XYZ target)
+        {
+            return source.Equals(ColorConverter.XyzToRgb(target));
+        }
 
         public static bool Equals(HEX source, RGB target)
         {
@@ -50,6 +55,11 @@
         public static bool Equals(HEX source, HSL target)
         {
             return source.Equals(ColorConverter.HslToHex(target));
+        }
+        
+        public static bool Equals(HEX source, XYZ target)
+        {
+            return source.Equals(ColorConverter.XyzToHex(target));
         }
 
         public static bool Equals(CMYK source, RGB target)
@@ -76,6 +86,11 @@
         {
             return source.Equals(target);
         }
+        
+        public static bool Equals(CMYK source, XYZ target)
+        {
+            return source.Equals(ColorConverter.XyzToCmyk(target));
+        }
 
         public static bool Equals(HSV source, RGB target)
         {
@@ -101,6 +116,11 @@
         {
             return source.Equals(ColorConverter.HslToHsv(target));
         }
+        
+        public static bool Equals(HSV source, XYZ target)
+        {
+            return source.Equals(ColorConverter.XyzToHsv(target));
+        }
 
         public static bool Equals(HSL source, RGB target)
         {
@@ -120,6 +140,36 @@
         public static bool Equals(HSL source, HSV target)
         {
             return source.Equals(ColorConverter.HsvToHsl(target));
+        }
+        
+        public static bool Equals(HSL source, XYZ target)
+        {
+            return source.Equals(ColorConverter.XyzToHsl(target));
+        }
+        
+        public static bool Equals(XYZ source, RGB target)
+        {
+            return source.Equals(ColorConverter.RgbToXyz(target));
+        }
+        
+        public static bool Equals(XYZ source, HEX target)
+        {
+            return source.Equals(ColorConverter.HexToXyz(target));
+        }
+        
+        public static bool Equals(XYZ source, CMYK target)
+        {
+            return source.Equals(ColorConverter.CmykToXyz(target));
+        }
+        
+        public static bool Equals(XYZ source, HSV target)
+        {
+            return source.Equals(ColorConverter.HsvToXyz(target));
+        }
+        
+        public static bool Equals(XYZ source, HSL target)
+        {
+            return source.Equals(ColorConverter.HslToXyz(target));
         }
     }
 }
