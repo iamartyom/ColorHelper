@@ -82,23 +82,22 @@ namespace ColorHelper
 
         public static XYZ RgbToXyz(RGB rgb)
         {
-            double[] modifiedRGB = new double[] { rgb.R / 255.0, rgb.G / 255.0, rgb.B / 255.0 };
-            double[] sRGB = new double[3];
+            double[] modifiedRGB = { rgb.R / 255.0, rgb.G / 255.0, rgb.B / 255.0 };
 
             for(var x = 0; x < modifiedRGB.Length; x++)
             {
-                sRGB[x] =
-                    (modifiedRGB[x] > 0.4045) ?
+                modifiedRGB[x] =
+                    (modifiedRGB[x] > 0.04045) ?
                         Math.Pow((modifiedRGB[x] + 0.055) / 1.055, 2.4) :
                         (modifiedRGB[x] / 12.92);
 
-                sRGB[x] *= 100;
+                modifiedRGB[x] *= 100;
             }
 
             return new XYZ(
-                (sRGB[0] * 0.4124 + sRGB[1] * 0.3576 + sRGB[2] * 0.1805),
-                (sRGB[0] * 0.2126 + sRGB[1] * 0.7152 + sRGB[2] * 0.0722),
-                (sRGB[0] * 0.0193 + sRGB[1] * 0.1192 + sRGB[2] * 0.9505)
+                (modifiedRGB[0] * 0.4124 + modifiedRGB[1] * 0.3576 + modifiedRGB[2] * 0.1805),
+                (modifiedRGB[0] * 0.2126 + modifiedRGB[1] * 0.7152 + modifiedRGB[2] * 0.0722),
+                (modifiedRGB[0] * 0.0193 + modifiedRGB[1] * 0.1192 + modifiedRGB[2] * 0.9505)
             );
         }
 
